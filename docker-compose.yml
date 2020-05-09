@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  aliplayer:
+    image: aliplayer
+    container_name: aliplayer
+    environment:
+      - APP_ENV=prod
+      - TIMEZONE=Asia/Shanghai
+    restart: always
+    ports:
+      - "3000:3000"

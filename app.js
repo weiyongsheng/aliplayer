@@ -25,7 +25,10 @@ app.get('/', function(req, res){
     return;
   }
 
-  puppeteer.launch().then(async browser => {
+  puppeteer.launch({args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox'
+    ]}).then(async browser => {
     const page = await browser.newPage();
     var playInfo = ''
     page.on('response', response => {
